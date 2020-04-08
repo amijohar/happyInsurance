@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7"
+    "python.pythonPath": "/Users/invenstphoneone/env/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.pylamaEnabled": false,
+    "python.linting.flake8Enabled": true
 }

@@ -19,6 +19,9 @@ class Packages(models.Model):
     base_amt = models.FloatField(null=False)
     package_type = models.CharField(max_length=10, null=False)
 
+    def __str__(self): 
+         return self.package_type
+
 
 
 class Services(models.Model):
@@ -26,6 +29,9 @@ class Services(models.Model):
     service_id = models.AutoField(primary_key=True)
     service_name = models.CharField(max_length = 50)
     package_id = models.ForeignKey(Packages,on_delete=models.CASCADE)
+
+    def __str__(self): 
+         return self.service_name
 
 
 class Hospitals(models.Model):
