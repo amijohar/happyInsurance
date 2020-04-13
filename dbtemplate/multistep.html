@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>HappyInsurance - Here for all your healthcare needs</title>
+
+  <!-- css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="plugins/cubeportfolio/css/cubeportfolio.min.css">
+  <link href="css/nivo-lightbox.css" rel="stylesheet" />
+  <link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+  <link href="css/owl.carousel.css" rel="stylesheet" media="screen" />
+  <link href="css/owl.theme.css" rel="stylesheet" media="screen" />
+  <link href="css/animate.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- boxed bg -->
+  <link id="bodybg" href="bodybg/bg1.css" rel="stylesheet" type="text/css" />
+  <!-- template skin -->
+  <link id="t-colors" href="color/default.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Medicio
+    Theme URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+
+  <div id="wrapper">
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="top-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <p class="bold text-right">Call us now +1 XXX XX XXX</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container navigation">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+          <h2 class="h-ultra" style="margin-top: 20px;"><a href="index.html"></a>Happy<span style="color:#5f9ea0;">Insurance</span></h2>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#intro">Home</a></li>
+            <li><a href="#service">Services</a></li> -->
+            <!-- <li><a href="#doctor">Doctors</a></li>-->
+            <!-- <li><a href="#testimonial">Testimonials</a></li> 
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="SignUp-form.html">Sign-Up Now</a></li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome User <b class="caret"></b>  <i class="fa fa-user fa-2x circled bg-skin"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">My Plans</a></li>
+                <li><a href="#">My Claim History</a></li>
+                <li><a href="SignIn.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+    <section id="testimonial" class="home-section paddingbot-60 parallax" data-stellar-background-ratio="0.5">
+
+        <form id="regForm" action="" class="regForm">
+
+            
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">
+                <h2>ID and Address</h2>
+                <p>Name : </p>
+              <p><input placeholder="First name" oninput="this.className = ''" class="form-control input-md"></p>
+              <p><input placeholder="Last name" oninput="this.className = ''" class="form-control input-md"></p>
+              <p>Address : </p>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>Street Number : <input type="text" name="street_num" id="street_num" class="form-control input-md" oninput="this.className = ''"></p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>Apartment Number : <input type="text" name="apartment_num" id="apartment_num" class="form-control input-md" oninput="this.className = ''"></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>City : <input type="text" name="city_name" id="city_name" class="form-control input-md" oninput="this.className = ''"></p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>Apartment Number :
+                        <select id="state" name="state" class="form-control input-md">
+                            <option value="---">---</option>
+                            <option value="Alabama">Alabama</option>
+                            <option value="Alaska">Alaska</option>
+                            <option value="Arizona">Arizona</option>
+                            <option value="Arkansas">Arkansas</option>
+                            <option value="California">California</option>
+                            <option value="Colorado">Colorado</option>
+                            <option value="Connecticut">Connecticut</option>
+                            <option value="Delaware">Delaware</option>
+                            <option value="District of Columbia">District of Columbia</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Hawaii">Hawaii</option>
+                            <option value="Idaho">Idaho</option>
+                            <option value="Illinois">Illinois</option>
+                            <option value="Indiana">Indiana</option>
+                            <option value="Iowa">Iowa</option>
+                            <option value="Kansas">Kansas</option>
+                            <option value="Kentucky">Kentucky</option>
+                            <option value="Louisiana">Louisiana</option>
+                            <option value="Maine">Maine</option>
+                            <option value="Maryland">Maryland</option>
+                            <option value="Massachusetts">Massachusetts</option>
+                            <option value="Michigan">Michigan</option>
+                            <option value="Minnesota">Minnesota</option>
+                            <option value="Mississippi">Mississippi</option>
+                            <option value="Missouri">Missouri</option>
+                            <option value="Montana">Montana</option>
+                            <option value="Nebraska">Nebraska</option>
+                            <option value="Nevada">Nevada</option>
+                            <option value="New Hampshire">New Hampshire</option>
+                            <option value="New Jersey">New Jersey</option>
+                            <option value="New Mexico">New Mexico</option>
+                            <option value="New York">New York</option>
+                            <option value="North Carolina">North Carolina</option>
+                            <option value="North Dakota">North Dakota</option>
+                            <option value="Northern Marianas Islands">Northern Marianas Islands</option>
+                            <option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option>
+                            <option value="Oregon">Oregon</option>
+                            <option value="Pennsylvania">Pennsylvania</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Rhode Island">Rhode Island</option>
+                            <option value="South Carolina">South Carolina</option>
+                            <option value="South Dakota">South Dakota</option>
+                            <option value="Tennessee">Tennessee</option>
+                            <option value="Texas">Texas</option>
+                            <option value="Utah">Utah</option>
+                            <option value="Vermont">Vermont</option>
+                            <option value="Virginia">Virginia</option>
+                            <option value="Virgin Islands">Virgin Islands</option>
+                            <option value="Washington">Washington</option>
+                            <option value="West Virginia">West Virginia</option>
+                            <option value="Wisconsin">Wisconsin</option>
+                            <option value="Wyoming">Wyoming</option>
+                        </select></p>
+                </div>
+              </div>
+              <p>Upload ID and Address Proof : </p>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>ID Proof : <input type="file" name="id_proof" id="id_proof" oninput="this.className = ''"></p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>Address Proof : <input type="file" name="add_proof" id="add_proof" oninput="this.className = ''"></p>
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="tab">
+                <h2>Medical History</h2>
+                <h5><span class="fa fa-ambulance"></span> Ambulatory Patient Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> Diabetes
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> Arthritis
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Asthma
+                </label>
+                <hr>
+                <!-- <h5><span class="fa fa-first-aid"></span> Emergency Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label>
+                <hr> -->
+                <h5><span class="fa fa-syringe"></span> Hospitalization (Surgery) </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> Chronic Renal Disease
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> Coronary Artery Disease
+                    </label>
+                  <!-- <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label> -->
+                <hr>
+                <h5><span class="fa fa-baby"></span> Maternity and Newborn Care </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> Cystic fibrosis
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> Endometriosis
+                    </label>
+                  <!-- <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label> -->
+                <hr>
+                <h5><span class="fa fas fa-head-side-virus"></span> Mental Health </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> Bipolar
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> Depression
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Dementia
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Hypertension
+                </label>
+                <hr>
+                <h5><span class="fa fa-pills"></span> Prescription Drugs </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> HIV/AIDS
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> Thyroid 
+                    </label>
+                  <!-- <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Diabetes
+                </label> -->
+                <hr>
+                <h5><span class="fa fa-home"></span> Rehabilitative and Habitative Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> Epilepsy
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> Cancer
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Smoking
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Alcoholism
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3">  Eating Disorder
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3">  Autism
+                </label>
+                <hr>
+                <!-- <h5><span class="fa fa-vials"></span> Laboratory Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label>
+                <hr> -->
+                <h5><span class="fa fa-heartbeat"></span> Chronic Disease Management </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> Diabetes
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> Heart Disease
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Crohn Disease
+                </label>
+                <!-- <hr>
+                <h5><span class="fa fa-child"></span> Pediatric Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label> -->
+              <!-- <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
+              <p><input placeholder="Phone..." oninput="this.className = ''"></p> -->
+            </div>
+            
+            <div class="tab">
+                <h2>Financial History</h2>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <p><i class="fas fa-wallet"></i> Monthly Income : <input type="text" name="income" id="income" class="form-control input-md" oninput="this.className = ''"></p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <p><i class="fas fa-hand-holding-usd"></i> Monthly Expenditure : <input type="text" name="expenses" id="expenses" class="form-control input-md" oninput="this.className = ''"></p>
+                    </div>
+                  </div>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p><i class="fas fa-money-check-alt"></i>Bank Statement : <input type="file" name="bank_statement" id="bank_statement" oninput="this.className = ''"></p>
+                </div>
+              </div>
+            </div>
+            
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-skin btn-lg">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-skin btn-lg">Next</button>
+              </div>
+            </div>
+            
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+            
+            </form>
+        
+    </section>
+    
+    <footer>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="wow fadeInDown" data-wow-delay="0.1s">
+                <div class="widget">
+                  <h5>About HappyInsurance</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, ne nam purto nihil impetus, an facilisi accommodare sea
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="wow fadeInDown" data-wow-delay="0.1s">
+                <div class="widget">
+                  <h5>Contact Us</h5>
+                  <p>
+                    For more information, please reach out to us.
+                  </p>
+                  <ul>
+                    <li>
+                      <span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x"></i>
+                                      <i class="fa fa-calendar-o fa-stack-1x fa-inverse"></i>
+                                  </span> Monday - Saturday, 8am to 10pm
+                    </li>
+                    <li>
+                      <span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x"></i>
+                                      <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                                  </span> +1 XXX XX XXX
+                    </li>
+                    <li>
+                      <span class="fa-stack fa-lg">
+                                      <i class="fa fa-circle fa-stack-2x"></i>
+                                      <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                  </span> hello@happyinsurance.com
+                    </li>
+  
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="wow fadeInDown" data-wow-delay="0.1s">
+                <div class="widget">
+                  <h5>Follow us</h5>
+                  <ul class="company-social">
+                    <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="social-vimeo"><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                    <li class="social-dribble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sub-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="wow fadeInLeft" data-wow-delay="0.1s">
+                  <div class="text-left">
+                    <p>&copy;Copyright - Medicio Theme. All rights reserved.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="wow fadeInRight" data-wow-delay="0.1s">
+                  <div class="text-right">
+                    <div class="credits">
+                      <!--
+                        All the links in the footer should remain intact. 
+                        You can delete the links only if you purchased the pro version.
+                        Licensing information: https://bootstrapmade.com/license/
+                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Medicio
+                      -->
+                      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+    </div>
+    <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+  
+    <!-- Core JavaScript Files -->
+    <script src="https://kit.fontawesome.com/51dca21af8.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/nivo-lightbox.min.js"></script>
+    <script src="js/custom.js"></script>
+  
+  </body>
+  
+  </html>
+  
