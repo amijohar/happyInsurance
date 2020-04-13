@@ -6,8 +6,10 @@ app_name = "main"
 
 urlpatterns = [
     path('login',views.user_login, name="user_login"),
-    path('logout',views.user_logout),
-    path('signup',views.user_signup),
+    path('logout',views.user_logout, name="user_logout"),
+    path('signup',views.user_signup, name="user_signup"),
     path('index',views.index, name="index"),
-    path('addFinancialHistory', views.addFinancialHistory)
+    path('addFinancialHistory', views.addFinancialHistory),
+    path('profile', views.profile, name="profile"),
+    path('quote', views.quote, name="quote"),
 ]

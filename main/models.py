@@ -7,8 +7,8 @@ class Users(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     Contact_num = models.IntegerField(null=False)
     Address = models.CharField(max_length=50, null=False)
-    ID_proof = models.CharField(max_length=25)
-    Address_proof = models.CharField(max_length=25)
+    ID_proof = models.CharField(max_length=55)
+    Address_proof = models.CharField(max_length=55)
 
     def __str__(self): 
          return self.user.username
@@ -37,14 +37,17 @@ class Services(models.Model):
 class Hospitals(models.Model):
 
     hospital_id = models.AutoField(primary_key=True)
-    hospital_name = models.CharField(max_length=20)
+    hospital_name = models.CharField(max_length=50)
     package_id = models.ForeignKey(Packages,on_delete=models.CASCADE)
 
 class Diseases(models.Model):
 
     disease_id = models.AutoField(primary_key=True)
-    disease_name = models.CharField(max_length=20)
+    disease_name = models.CharField(max_length=50)
     service_id = models.ForeignKey(Services,on_delete=models.CASCADE)
+
+    def __str__(self): 
+         return self.disease_name
 
 class Medical_history(models.Model):
 
@@ -67,7 +70,7 @@ class Financial_History(models.Model):
     user_id = models.ForeignKey(Users,null=False,on_delete=models.CASCADE)
     monthly_income = models.FloatField(null=False)
     monthly_expenses = models.FloatField(null=False)
-    bank_statement = models.CharField(null=False,max_length=20)
+    bank_statement = models.CharField(null=False,max_length=50)
 
 class Purchase_details(models.Model):
 

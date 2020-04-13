@@ -22,68 +22,65 @@ def user_login(request):
         if user:
             login(request,user)
             #serializer = serializers.UserSerializer(user)
-            return redirect('main:index')
+            return redirect('main:profile')
             #return JsonResponse(serializer.data)
         return HttpResponse(status=401)
     
     else:
         #form = forms.LoginForm()
-        return render(request,'login.html')
+        return render(request,'SignIn.html')
 
 def user_signup(request):
 
     if request.method == 'POST':
   
-        if models.User.objects.filter(username=request.POST['username']).exists():
+        if models.User.objects.filter(username=request.POST['email']).exists():
             return HttpResponse(status=403)
         else:
-            form = forms.UserForm(request.POST)
-            if form.is_valid:
-                u = models.User(username=request.POST['username'])
-                u.set_password(request.POST['password'])
-                u.save()
-                login(request, u)
-                newUser = form.save(commit=False)
-                newUser.user = u
-                newUser.save()
-                #serializer = serializers.UserSerializer(u)
-                return redirect('main:index')
+            u = models.User(username=request.POST['email'], first_name = request.POST['first_name'], last_name = request.POST['last_name'], email = request.POST['email'])
+            u.set_password(request.POST['password'])
+            u.save()
+            login(request, u)
+            #serializer = serializers.UserSerializer(u)
+            return redirect('main:profile')
     else:
-        form = forms.UserForm()
-        return render(request,'signup.html',{'form':form})
+        return render(request,'SignUp-form.html')
 
 def user_logout(request):
     logout(request)
-    return HttpResponse(status=200)
+    return redirect('main:index')
 
 
 def index(request):
+
+    services = models.Services.objects.all()
+
+    packages = {}
+
+    for o in services:
+        if o.package_id.package_type not in packages:
+            packages[o.package_id.package_type] = [o.service_name]
+        else:
+            packages[o.package_id.package_type].append(o.service_name)
+
+    print(packages)
+
+
+    return render(request,"index copy.html", {'data':packages})
+
+
+def profile(request):
 
     if request.user.is_authenticated == False:
 
         return redirect('main:user_login')
     
     else:
+        user = request.user
 
-        user = request.user.username
-
-        services = models.Services.objects.all()
-
-        packages = {}
-
-        for o in services:
-            if o.package_id.package_type not in packages:
-                packages[o.package_id.package_type] = [o.service_name]
-            else:
-                packages[o.package_id.package_type].append(o.service_name)
-        
-        
+        return render(request,"profile.html", {'user':user})
 
 
-        print(packages)
-
-
-        return render(request,"index.html", {'user':user, 'data':packages})
 
 
 def addMedicalHistory(request):
@@ -116,3 +113,50 @@ def addFinancialHistory(request):
     else:
         form = forms.FinancialHistoryForm()
         return render(request, "financialHistoryForm.html", {'form':form})
+
+
+def quote(request):
+
+
+    if request.method == 'POST':
+
+        print(request.POST) 
+        print(request.FILES)
+
+        user = request.user
+
+        newUserInfo = models.Users(user=user, Contact_num = request.POST['contact'], Address = request.POST['address'], ID_proof = request.POST['id_proof'], Address_proof = request.POST['add_proof'])
+        newUserInfo.save()
+
+        newHistory = models.Financial_History(user_id = newUserInfo,monthly_income = request.POST['income'], monthly_expenses = request.POST['expenses'], bank_statement = request.POST['bank_statement'] )
+        newHistory.save()
+
+        diseases = request.POST.getlist('disease')
+
+        for i in diseases:
+
+            d = models.Diseases.objects.get(disease_id = i)
+            newMedicalHistory = models.Medical_history(user_id = newUserInfo, disease_id = d)
+            newMedicalHistory.save()
+
+    
+    else:
+        # change services based on package selected
+        package_type = request.GET['package']
+        if package_type == 'Platinum':
+            services = models.Services.objects.all()
+        elif package_type == 'Premium':
+            services = models.Services.objects.filter(package_id__package_type__in = ['Basic', 'Platinum'] )
+        else:
+            services = models.Services.objects.filter(package_id__package_type = package_type)
+        diseases = models.Diseases.objects.filter(service_id__in = services)
+
+        final_dict = {}
+        for o in diseases:
+            if o.service_id.service_name not in final_dict:
+                final_dict[o.service_id.service_name] = [o]
+            
+            else:
+                final_dict[o.service_id.service_name].append(o)
+        print(final_dict)
+        return render(request, "multistep.html", {'data':final_dict})

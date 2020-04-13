@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load static &}
+{% block content %}
+
+    <section id="testimonial" class="home-section paddingbot-60 parallax" data-stellar-background-ratio="0.5">
+
+        <form id="regForm" action="" class="regForm" method="POST">
+
+            {% csrf_token %}
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">
+                <h2>ID and Address</h2>
+                <!-- <p>Name : </p>
+              <p><input placeholder="First name" oninput="this.className = ''" class="form-control input-md"></p>
+              <p><input placeholder="Last name" oninput="this.className = ''" class="form-control input-md"></p> -->
+              <p>Contact : <input type="text" name="contact" id="apartment_num" class="form-control input-md" oninput="this.className = ''"> </p>
+              <p>Address : <input type="text" name="address" id="apartment_num" class="form-control input-md" oninput="this.className = ''"> </p>
+              <!-- <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>Street Number : <input type="text" name="street_num" id="street_num" class="form-control input-md" oninput="this.className = ''"></p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>Apartment Number : <input type="text" name="apartment_num" id="apartment_num" class="form-control input-md" oninput="this.className = ''"></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>City : <input type="text" name="city_name" id="city_name" class="form-control input-md" oninput="this.className = ''"></p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>Apartment Number :
+                        <select id="state" name="state" class="form-control input-md">
+                            <option value="---">---</option>
+                            <option value="Alabama">Alabama</option>
+                            <option value="Alaska">Alaska</option>
+                            <option value="Arizona">Arizona</option>
+                            <option value="Arkansas">Arkansas</option>
+                            <option value="California">California</option>
+                            <option value="Colorado">Colorado</option>
+                            <option value="Connecticut">Connecticut</option>
+                            <option value="Delaware">Delaware</option>
+                            <option value="District of Columbia">District of Columbia</option>
+                            <option value="Florida">Florida</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Guam">Guam</option>
+                            <option value="Hawaii">Hawaii</option>
+                            <option value="Idaho">Idaho</option>
+                            <option value="Illinois">Illinois</option>
+                            <option value="Indiana">Indiana</option>
+                            <option value="Iowa">Iowa</option>
+                            <option value="Kansas">Kansas</option>
+                            <option value="Kentucky">Kentucky</option>
+                            <option value="Louisiana">Louisiana</option>
+                            <option value="Maine">Maine</option>
+                            <option value="Maryland">Maryland</option>
+                            <option value="Massachusetts">Massachusetts</option>
+                            <option value="Michigan">Michigan</option>
+                            <option value="Minnesota">Minnesota</option>
+                            <option value="Mississippi">Mississippi</option>
+                            <option value="Missouri">Missouri</option>
+                            <option value="Montana">Montana</option>
+                            <option value="Nebraska">Nebraska</option>
+                            <option value="Nevada">Nevada</option>
+                            <option value="New Hampshire">New Hampshire</option>
+                            <option value="New Jersey">New Jersey</option>
+                            <option value="New Mexico">New Mexico</option>
+                            <option value="New York">New York</option>
+                            <option value="North Carolina">North Carolina</option>
+                            <option value="North Dakota">North Dakota</option>
+                            <option value="Northern Marianas Islands">Northern Marianas Islands</option>
+                            <option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option>
+                            <option value="Oregon">Oregon</option>
+                            <option value="Pennsylvania">Pennsylvania</option>
+                            <option value="Puerto Rico">Puerto Rico</option>
+                            <option value="Rhode Island">Rhode Island</option>
+                            <option value="South Carolina">South Carolina</option>
+                            <option value="South Dakota">South Dakota</option>
+                            <option value="Tennessee">Tennessee</option>
+                            <option value="Texas">Texas</option>
+                            <option value="Utah">Utah</option>
+                            <option value="Vermont">Vermont</option>
+                            <option value="Virginia">Virginia</option>
+                            <option value="Virgin Islands">Virgin Islands</option>
+                            <option value="Washington">Washington</option>
+                            <option value="West Virginia">West Virginia</option>
+                            <option value="Wisconsin">Wisconsin</option>
+                            <option value="Wyoming">Wyoming</option>
+                        </select></p>
+                </div>
+              </div> -->
+              <p>Upload ID and Address Proof : </p>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>ID Proof : <input type="file" name="id_proof" id="id_proof" oninput="this.className = ''"></p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p>Address Proof : <input type="file" name="add_proof" id="add_proof" oninput="this.className = ''"></p>
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="tab">
+                <h2>Medical History</h2>
+                <!-- <h5><span class="fa fa-ambulance"></span> Ambulatory Patient Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" name="disease"> Diabetes
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2" name="disease"> Arthritis
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease"> Asthma
+                </label>
+                <hr> -->
+                <!-- <h5><span class="fa fa-first-aid"></span> Emergency Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label>
+                <hr> -->
+                <!-- <h5><span class="fa fa-syringe"></span> Hospitalization (Surgery) </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" name="disease"> Chronic Renal Disease
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2" name="disease"> Coronary Artery Disease
+                    </label> -->
+                  <!-- <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label> -->
+                <!-- <hr>
+                <h5><span class="fa fa-baby"></span> Maternity and Newborn Care </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" name="disease"> Cystic fibrosis
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2" name="disease"> Endometriosis
+                    </label> -->
+                  <!-- <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label> -->
+                <!-- <hr>
+                <h5><span class="fa fas fa-head-side-virus"></span> Mental Health </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" name="disease"> Bipolar
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2" name="disease"> Depression
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease"> Dementia
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease"> Hypertension
+                </label>
+                <hr>
+                <h5><span class="fa fa-pills"></span> Prescription Drugs </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" name="disease"> HIV/AIDS
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2" name="disease"> Thyroid 
+                    </label> -->
+                  <!-- <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> Diabetes
+                </label> -->
+                <!-- <hr>
+                <h5><span class="fa fa-home"></span> Rehabilitative and Habitative Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" name="disease"> Epilepsy
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2" name="disease"> Cancer
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease"> Smoking
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease"> Alcoholism
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease">  Eating Disorder
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease">  Autism
+                </label>
+                <hr> -->
+                <!-- <h5><span class="fa fa-vials"></span> Laboratory Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label>
+                <hr> -->
+                <!-- <h5><span class="fa fa-heartbeat"></span> Chronic Disease Management </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" name="disease"> Diabetes
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2" name="disease"> Heart Disease
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease"> Crohn Disease
+                </label> -->
+
+                {% for key,value in data.items %}
+                  <h5><span class="fa fa-heartbeat"></span> {{key}} </h5>
+                  {% for i in value %}
+                   
+                    <label class="checkbox-inline"> 
+                        <input type="checkbox" id="{{i.disease_id}}" value="{{i.disease_id}}" name="disease"> {{i.disease_name}}
+                    </label>
+                    <hr>
+                  {% endfor %}
+                {% endfor %}
+                      <!-- <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox2" value="option2" name="disease"> Heart Disease
+                        </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox3" value="option3" name="disease"> Crohn Disease
+                    </label> -->
+                <!-- <hr>
+                <h5><span class="fa fa-child"></span> Pediatric Services </h5>
+                <label class="checkbox-inline"> 
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+                    </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+                </label> -->
+              <!-- <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
+              <p><input placeholder="Phone..." oninput="this.className = ''"></p> -->
+            </div>
+            <div class="tab">
+                <h2>Financial History</h2>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <p><i class="fas fa-wallet"></i> Monthly Income : <input type="text" name="income" id="income" class="form-control input-md" oninput="this.className = ''"></p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <p><i class="fas fa-hand-holding-usd"></i> Monthly Expenditure : <input type="text" name="expenses" id="expenses" class="form-control input-md" oninput="this.className = ''"></p>
+                    </div>
+                  </div>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <p><i class="fas fa-money-check-alt"></i>Bank Statement : <input type="file" name="bank_statement" id="bank_statement" oninput="this.className = ''"></p>
+                </div>
+              </div>
+            </div>
+            
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-skin btn-lg">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-skin btn-lg">Next</button>
+              </div>
+            </div>
+            
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+              <span class="step"></span>
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+            
+            </form>
+        
+    </section>
+    
+   {% endblock %}
+  
