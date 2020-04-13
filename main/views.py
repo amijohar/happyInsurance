@@ -55,6 +55,8 @@ def index(request):
 
     services = models.Services.objects.all()
 
+    package = models.Packages.objects.all()
+
     packages = {}
 
     for o in services:
@@ -66,7 +68,7 @@ def index(request):
     print(packages)
 
 
-    return render(request,"index copy.html", {'data':packages})
+    return render(request,"index.html", {'data':packages, 'services':services, 'package':package})
 
 
 def profile(request):
