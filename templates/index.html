@@ -395,12 +395,12 @@
 
         <div class="row">
         {% for key,value in data.items %}
-        {% if key == 'Basic' %}
+        {% if key.package_type == 'Basic' %}
           <div class="col-sm-4 pricing-box featured-price">
             <div class="wow bounceInUp" data-wow-delay="0.1s">
               <div class="pricing-content featured">
-                <h2>{{key}} Package</h2>
-                <h3>${{package.0.base_amt}}<span>/ per month</span></h3>
+                <h2>{{key.package_type}} Package</h2>
+                <h3>${{key.base_amt}}<span>/ per month</span></h3>
                 {% for v in value %}
                 <ul>
                   <li>{{v}} <i class="fa fa-check icon-success"></i></li>
@@ -416,11 +416,11 @@
             </div>
           </div>
          
-          {% elif key == 'Platinum' %}
+          {% elif key.package_type == 'Platinum' %}
           <div class="col-sm-4 pricing-box featured-price">
             <div class="wow bounceInUp" data-wow-delay="0.3s">
               <div class="pricing-content featured">
-                <h2>{{key}} Package</h2>
+                <h2>{{key.package_type}} Package</h2>
                 <h3>${{package.2.base_amt}} <span>/ per month</span></h3>
                 {% for v in value %}
                 <ul>
@@ -444,7 +444,7 @@
           <div class="col-sm-4 pricing-box general">
             <div class="wow bounceInUp" data-wow-delay="0.2s">
               <div class="pricing-content general last">
-                <h2>{{key}} Package</h2>
+                <h2>{{key.package_type}} Package</h2>
                 <h3>${{package.1.base_amt}}<span>/ per month</span></h3>
                 {% for v in value %}
                 <ul>

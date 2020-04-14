@@ -19,67 +19,79 @@
         </div>
   
         <div class="container">
-  
+
           <div class="row">
-  
-            <div class="col-sm-4 pricing-box">
+          {% for key,value in data.items %}
+          {% if key.package_type == 'Basic' %}
+            <div class="col-sm-4 pricing-box featured-price">
               <div class="wow bounceInUp" data-wow-delay="0.1s">
-                <div class="pricing-content general">
-                  <h2>Basic Package</h2>
-                  <h3>$149<sup>.99</sup> <span>/ per month</span></h3>
+                <div class="pricing-content featured">
+                  <h2>{{key.package_type}} Package</h2>
+                  <h3>${{key.base_amt}}<span>/ per month</span></h3>
+                  {% for v in value %}
                   <ul>
-                    <li>Anthropometry (BMI, WH Ratio) <i class="fa fa-check icon-success"></i></li>
-                    <li>Post Examination Review <i class="fa fa-check icon-success"></i></li>
+                    <li>{{v}} <i class="fa fa-check icon-success"></i></li>
+                    <!-- <li>Post Examination Review <i class="fa fa-check icon-success"></i></li>
                     <li>General Screening – Basic <i class="fa fa-check icon-success"></i></li>
-                    <li><del>Health Screening Report</del> <i class="fa fa-times icon-danger"></i></li>
+                    <li><del>Health Screening Report</del> <i class="fa fa-times icon-danger"></i></li> -->
                   </ul>
-  
+                  {% endfor %}
                   <div class="price-bottom">
-                    <a href="{% url 'main:quote' %}?package=Basic" class="btn btn-skin btn-lg">Purchase</a>
+                    <a href="{% url 'main:quote' %}?package={{key.package_type}}" class="btn btn-skin btn-lg">Purchase</a>
                   </div>
                 </div>
               </div>
             </div>
-  
+           
+            {% elif key.package_type == 'Platinum' %}
             <div class="col-sm-4 pricing-box featured-price">
               <div class="wow bounceInUp" data-wow-delay="0.3s">
                 <div class="pricing-content featured">
-                  <h2>Platinum Package</h2>
-                  <h3>$449<sup>.99</sup> <span>/ per month</span></h3>
+                  <h2>{{key.package_type}} Package</h2>
+                  <h3>${{package.2.base_amt}} <span>/ per month</span></h3>
+                  {% for v in value %}
                   <ul>
-                    <li>Anthropometry (BMI, WH Ratio) <i class="fa fa-check icon-success"></i></li>
-                    <li>Post Examination Review <i class="fa fa-check icon-success"></i></li>
-                    <li>General Screening – Basic <i class="fa fa-check icon-success"></i></li>
+                    <li>{{v}} <i class="fa fa-check icon-success"></i></li> 
+                    <!-- <li>General Screening – Basic <i class="fa fa-check icon-success"></i></li>
                     <li>Body Composition Analysis <i class="fa fa-check icon-success"></i></li>
-                    <li>GR Assessment & Scoring <i class="fa fa-check icon-success"></i></li>
+                    <li>GR Assessment & Scoring <i class="fa fa-check icon-success"></i></li> -->
                   </ul>
-  
+                  {% endfor %}
+                  <ul>
+                      <li>All Premium Services <i class="fa fa-check icon-success"></i></li>
+                  </ul>
                   <div class="price-bottom">
-                    <a href="{% url 'main:quote' %}?package=Platinum" class="btn btn-skin btn-lg">Purchase</a>
+                    <a href="{% url 'main:quote' %}?package={{key.package_type}}" class="btn btn-skin btn-lg">Purchase</a>
                   </div>
                 </div>
               </div>
             </div>
   
-            <div class="col-sm-4 pricing-box">
+           {% else %}
+            <div class="col-sm-4 pricing-box general">
               <div class="wow bounceInUp" data-wow-delay="0.2s">
                 <div class="pricing-content general last">
-                  <h2>Gold Package</h2>
-                  <h3>$299<sup>.99</sup> <span>/ per month</span></h3>
+                  <h2>{{key.package_type}} Package</h2>
+                  <h3>${{package.1.base_amt}}<span>/ per month</span></h3>
+                  {% for v in value %}
                   <ul>
-                    <li>Anthropometry (BMI, WH Ratio) <i class="fa fa-check icon-success"></i></li>
-                    <li>Post Examination Review <i class="fa fa-check icon-success"></i></li>
-                    <li>General Screening – Regular <i class="fa fa-check icon-success"></i></li>
-                    <li><del>Health Screening Report</del> <i class="fa fa-times icon-danger"></i></li>
+                    <li>{{v}} <i class="fa fa-check icon-success"></i></li>
+                    <!-- <li>General Screening – Regular <i class="fa fa-check icon-success"></i></li>
+                    <li><del>Health Screening Report</del> <i class="fa fa-times icon-danger"></i></li> -->
                   </ul>
-  
+                  {% endfor %}
+                  <ul>
+                      <li>All Basic Services <i class="fa fa-check icon-success"></i></li>
+                  </ul>
                   <div class="price-bottom">
-                    <a href="{% url 'main:quote' %}?package=Premium" class="btn btn-skin btn-lg">Purchase</a>
+                    <a href="{% url 'main:quote' %}?package={{key.package_type}}" class="btn btn-skin btn-lg">Purchase</a>
                   </div>
                 </div>
               </div>
             </div>
   
+            {% endif %}
+            {% endfor %}
           </div>
   
         </div>

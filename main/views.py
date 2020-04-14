@@ -59,11 +59,13 @@ def index(request):
 
     packages = {}
 
+    finalDict = []
+
     for o in services:
-        if o.package_id.package_type not in packages:
-            packages[o.package_id.package_type] = [o.service_name]
+        if o.package_id not in packages:
+            packages[o.package_id] = [o.service_name]
         else:
-            packages[o.package_id.package_type].append(o.service_name)
+            packages[o.package_id].append(o.service_name)
 
     print(packages)
 
@@ -80,7 +82,23 @@ def profile(request):
     else:
         user = request.user
 
-        return render(request,"profile.html", {'user':user})
+        services = models.Services.objects.all()
+
+        package = models.Packages.objects.all()
+
+        packages = {}
+
+        finalDict = []
+
+        for o in services:
+            if o.package_id not in packages:
+                packages[o.package_id] = [o.service_name]
+            else:
+                packages[o.package_id].append(o.service_name)
+
+        print(packages)
+
+        return render(request,"profile.html", {'user':user, 'data':packages, 'services':services, 'package':package })
 
 
 
