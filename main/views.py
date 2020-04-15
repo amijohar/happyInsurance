@@ -101,40 +101,6 @@ def profile(request):
         return render(request,"profile.html", {'user':user, 'data':packages, 'services':services, 'package':package })
 
 
-
-
-def addMedicalHistory(request):
-
-    if request.method == 'POST':
-
-        a = 1
-    
-    else:
-
-        return render(request, "medicalHistoryForm.html", {})
-
-
-def addFinancialHistory(request):
-
-    if request.method == 'POST':
-
-        user = request.user.username
-        search_user = models.User.objects.filter(username=user)
-        main_user = models.Users.objects.filter(user=search_user[0])
-        fileName = request.FILES['myFile'].name
-        form = forms.FinancialHistoryForm(request.POST)
-        if form.is_valid():
-            newHistory = form.save(commit=False)
-            newHistory.bank_statement = fileName
-            newHistory.user_id = main_user[0]
-            newHistory.save()
-
-    
-    else:
-        form = forms.FinancialHistoryForm()
-        return render(request, "financialHistoryForm.html", {'form':form})
-
-
 def quote(request):
 
 
@@ -180,3 +146,8 @@ def quote(request):
                 final_dict[o.service_id.service_name].append(o)
         print(final_dict)
         return render(request, "multistep.html", {'data':final_dict})
+
+
+def purchase(request) :
+
+    return render(request, "purchaseForm.html", {})
