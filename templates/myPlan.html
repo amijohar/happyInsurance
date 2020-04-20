@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <br>
+    <br>
+    <section id="pricing" class="home-section bg-gray paddingbot-60">
+        <table class="table table-advance table-hover" style="padding: 2%; margin: auto; width: 80%;">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id = "main">
+                <tr>
+                    <td> Plan Purchased</td>
+                    <td> Basic Plan</td>
+                </tr>
+                <tr>
+                    <td> Total Cost</td>
+                    <td> $152.99</td>
+                </tr>
+                <tr>
+                    <td> Services Accessible</td>
+                    <td>
+                        <ul>
+                            <li> Ambulatory Patient Services</li>
+                            <li> Maternity and New Born Care</li>
+                            <li> Prescription Drugs</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Hospitals Accessible</td>
+                    <td>
+                        <ul>
+                            <li> ABC</li>
+                            <li> XYZ</li>
+                            <li> AAA</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+    </section>
+
+{% endblock %}

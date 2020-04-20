@@ -161,3 +161,7 @@ def purchase(request) :
 
     print(request.GET)
     return render(request, "purchaseForm.html", {})
+
+def myPlan(request) :
+
+    return render(request, "myPlan.html",{})
