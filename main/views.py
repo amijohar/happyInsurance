@@ -151,3 +151,7 @@ def quote(request):
 def purchase(request) :
 
     return render(request, "purchaseForm.html", {})
+
+def myPlan(request) :
+
+    return render(request, "myPlan.html",{})
