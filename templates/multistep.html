@@ -4,17 +4,19 @@
 
     <section id="testimonial" class="home-section paddingbot-60 parallax" data-stellar-background-ratio="0.5">
 
-        <form id="regForm" action="purchaseForm.html" class="regForm" method="POST">
+        <form id="regForm" action="" class="regForm" method="POST">
 
             {% csrf_token %}
             <!-- One "tab" for each step in the form: -->
             <div class="tab">
                 <h2>ID and Address</h2>
+        
                 <!-- <p>Name : </p>
               <p><input placeholder="First name" oninput="this.className = ''" class="form-control input-md"></p>
               <p><input placeholder="Last name" oninput="this.className = ''" class="form-control input-md"></p> -->
               <p>Contact : <input type="text" name="contact" id="apartment_num" class="form-control input-md" oninput="this.className = ''"> </p>
               <p>Address : <input type="text" name="address" id="apartment_num" class="form-control input-md" oninput="this.className = ''"> </p>
+              <input type="text" name = "package" value="{{package}}" hidden>
               <!-- <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <p>Street Number : <input type="text" name="street_num" id="street_num" class="form-control input-md" oninput="this.className = ''"></p>
@@ -96,9 +98,11 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <p>Address Proof : <input type="file" name="add_proof" id="add_proof" oninput="this.className = ''"></p>
+
                 </div>
               </div>
 
+              
             </div>
             
             <div class="tab">
@@ -258,6 +262,7 @@
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <p><i class="fas fa-money-check-alt"></i>Bank Statement : <input type="file" name="bank_statement" id="bank_statement" oninput="this.className = ''"></p>
                 </div>
+                
               </div>
             </div>
             
