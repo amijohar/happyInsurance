@@ -131,7 +131,7 @@ def quote(request):
                 d = models.Diseases.objects.get(disease_id = i)
                 newMedicalHistory = models.Medical_history(user_id = newUserInfo, disease_id = d)
                 newMedicalHistory.save()
-            redirectString = 'main/purchase?package=' + request.POST['package']
+            redirectString = '/purchase?package=' + request.POST['package']
             return redirect(redirectString)
 
         
@@ -160,8 +160,46 @@ def quote(request):
 def purchase(request) :
 
     print(request.GET)
-    return render(request, "purchaseForm.html", {})
+    user = request.user
+    main_user = models.Users.objects.get(user=user)
+    package = models.Packages.objects.get(package_type = request.GET['package'])
+    base_price = package.base_amt
+    additional_costs = 0
+    diseases = models.Medical_history.objects.filter(user_id = main_user)
+    for i in diseases:
+        additional_costs+=10
+    tax = (base_price+additional_costs)*0.15
+    total = base_price + additional_costs + tax
+    return render(request, "purchaseForm.html", {'base_price':base_price, 'package':package, 'additional_costs':additional_costs, 'total':total, 'tax':tax})
+
+def purchaseFinal(request):
+
+    user = request.user
+    main_user = models.Users.objects.get(user=user)
+    package = models.Packages.objects.get(package_type = request.GET['package'])
+    total = float(request.GET['total'])
+
+    newPurchase = models.Purchase_details(user_id = main_user, package_id = package, premium_amount = total)
+    newPurchase.save()
+
+    return render(request, 'purchaseFinal.html', {'package':package.package_type})
+
 
 def myPlan(request) :
 
-    return render(request, "myPlan.html",{})
+    user = request.user
+    main_user = models.Users.objects.get(user=user)
+    purchase = models.Purchase_details.objects.filter(user_id = main_user)
+
+    if purchase[0].package_id.package_type == 'Platinum':
+        services = models.Services.objects.all()
+        hospitals = models.Hospitals.objects.all()
+    elif purchase[0].package_id.package_type == 'Premium':
+        services = models.Services.objects.filter(package_id__package_type__in = ['Basic', 'Platinum'] )
+        hospitals = models.Hospitals.objects.filter(package_id__package_type__in = ['Basic', 'Platinum'] )
+    else:
+        services = models.Services.objects.filter(package_id__package_type = package_type)
+        hospitals = models.Hospitals.objects.filter(package_id__package_type = 'Basic' )
+    
+
+    return render(request, "myPlan.html",{'purchase':purchase[0], 'services':services, 'hospitals':hospitals})

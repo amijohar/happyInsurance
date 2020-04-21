@@ -12,5 +12,6 @@ urlpatterns = [
     path('profile', views.profile, name="profile"),
     path('quote', views.quote, name="quote"),
     path('myPlan', views.myPlan, name="myPlan"),
-    path('purchase', views.purchase, name="purchase")
+    path('purchase', views.purchase, name="purchase"),
+    path('purchaseFinal', views.purchaseFinal, name="purchaseFinal")
 ]

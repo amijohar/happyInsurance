@@ -14,19 +14,23 @@
             <tbody id = "main">
                 <tr>
                     <td> Plan Purchased</td>
-                    <td> Basic Plan</td>
+                    <td> {{purchase.package_id.package_type}}</td>
                 </tr>
                 <tr>
                     <td> Total Cost</td>
-                    <td> $152.99</td>
+                    <td> ${{purchase.premium_amount}}</td>
+                </tr>
+                <tr>
+                    <td> Purchase Date</td>
+                    <td> {{purchase.date}}</td>
                 </tr>
                 <tr>
                     <td> Services Accessible</td>
                     <td>
                         <ul>
-                            <li> Ambulatory Patient Services</li>
-                            <li> Maternity and New Born Care</li>
-                            <li> Prescription Drugs</li>
+                            {% for service in services %}
+                            <li> {{service.service_name}}</li>
+                            {% endfor %}
                         </ul>
                     </td>
                 </tr>
@@ -34,9 +38,9 @@
                     <td> Hospitals Accessible</td>
                     <td>
                         <ul>
-                            <li> ABC</li>
-                            <li> XYZ</li>
-                            <li> AAA</li>
+                            {% for hospital in hospitals %}
+                            <li> {{hospital.hospital_name}}</li>
+                            {% endfor %}
                         </ul>
                     </td>
                 </tr>
